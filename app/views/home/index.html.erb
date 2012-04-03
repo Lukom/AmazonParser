@@ -1,0 +1,19 @@
+<ol>
+  <% @books.each do |book| %>
+    <li style="overflow: hidden; border-bottom: 2px solid gray; margin-bottom: 1em;">
+      <%= link_to image_tag(book[:img_src]), book[:url], :style => 'float: left;' %>
+      <p><b>name: </b><%= strip_tags(book[:name]) %></p>
+      <p><b>pub date: </b><%= book[:pub_date] %></p>
+      <div><b>description: </b><%=raw book[:description] %></div>
+      <p><b>publisher: </b><%= book[:publisher] %></p>
+      <p><b>pages: </b><%= book[:pages] %></p>
+
+      <div style="overflow: hidden;">
+        <p style="float: left; margin: 0 3ex 0 0;"><b>price: </b><%= book[:price] %></p>
+        <p style="float: left; margin: 0 3ex 0 0;"><b>likes: </b><%= book[:likes] %></p>
+        <p style="float: left; margin: 0 3ex 0 0;"><b>reviews: </b><%= book[:reviews] %></p>
+        <p style="float: left; margin: 0 3ex 0 0;"><b>stars: </b><%= book[:stars] %></p>
+      </div>
+    </li>
+  <% end %>
+</ol>
